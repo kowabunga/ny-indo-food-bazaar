@@ -7,6 +7,7 @@ import ListItem from './listItem';
 export default function Navbar() {
   // store pathname of current page. Used for determing active link styles for navbar
   const [activePage, setActivePage] = useState('');
+  const [mobileMenu, setMobileMenu] = useState(false);
   const router = useRouter();
 
   //Information necessary to create navbar "li" links
@@ -17,12 +18,18 @@ export default function Navbar() {
     { href: '/vendors', title: 'Vendors' },
   ];
 
+  const changeMobileMenu = e => {
+    e.preventDefault();
+    setMobileMenu(prevState => (prevState = !prevState));
+  };
+
   useEffect(() => {
     setActivePage(router.pathname);
   }, [router]);
 
   return (
     <nav className='px-2 py-3 w-full'>
+      {mobileMenu}
       <ul className='flex items-center justify-around'>
         <li>
           <Link href='/'>
@@ -36,9 +43,16 @@ export default function Navbar() {
           </Link>
         </li>
 
+        {/* Navbar Menu Items */}
         {links.map(link => (
-          <ListItem linkInfo={link} activePage={activePage} />
+          <ListItem linkInfo={link} activePage={activePage} key={link.href} />
         ))}
+
+        <li className='cursor-pointer text-2xl sm:hidden ml-auto'>
+          <button onClick={changeMobileMenu}>
+            <FontAwesomeIcon icon='bars' />
+          </button>
+        </li>
       </ul>
     </nav>
   );
