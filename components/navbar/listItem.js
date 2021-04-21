@@ -5,18 +5,18 @@ export default function ListItem({
   mobileMenu,
   linkInfo: { href, title },
 }) {
-  const desktopClasses = `p-2 text-center rounded hidden sm:block transition duration-200 ease-in ${
-    activePage === href ? 'shadow-inner bg-green-200' : 'text-gray-600'
-  } hover:bg-green-100`;
-
-  const mobileClasses = `p-5 transition duration-200 ease-in text-center shadow-sm ${
-    activePage === href ? 'shadow-inner bg-green-200' : 'text-gray-600'
-  } hover:bg-green-100`;
-
   return (
     <Link href={href}>
       <a>
-        <li className={mobileMenu ? mobileClasses : desktopClasses}>{title}</li>
+        <li
+          className={`${
+            !mobileMenu && 'hidden'
+          } sm:block text-center rounded transition duration-200 ease-in ${
+            activePage === href ? 'shadow-inner bg-green-200' : 'text-gray-600'
+          } hover:bg-green-100 p-5 sm:p-2`}
+        >
+          {title}
+        </li>
       </a>
     </Link>
   );
