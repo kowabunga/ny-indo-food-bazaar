@@ -3,5 +3,8 @@ module.exports = () => {
     env: {
       mongoDbURI: '',
     },
+    future: {
+      webpack5: true,
+    },
   };
 };

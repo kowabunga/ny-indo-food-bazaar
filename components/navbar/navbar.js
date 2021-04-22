@@ -29,22 +29,19 @@ export default function Navbar() {
   }, [router]);
 
   return (
-    <nav className='px-2 py-3 w-full relative'>
+    <nav className='px-2 py-3 w-full relative sm:grid sm:grid-cols-12 sm:items-center'>
+      <Link href='/' className='col-span-1'>
+        <a>
+          <FontAwesomeIcon
+            icon='utensils'
+            size='2x'
+            className='text-green-400'
+          />
+        </a>
+      </Link>
       <ul
-        className={`flex flex-col mt-1 sm:mt-0 sm:flex-row sm:items-center sm:justify-between md:justify-around`}
+        className={`flex flex-col mt-1 sm:mt-0 sm:flex-row sm:items-center sm:justify-around sm:col-start-4 md:col-start-6 col-end-13`}
       >
-        <li>
-          <Link href='/'>
-            <a>
-              <FontAwesomeIcon
-                icon='utensils'
-                size='2x'
-                className='text-green-400'
-              />
-            </a>
-          </Link>
-        </li>
-
         {/* Navbar Menu Items */}
         {links.map(link => (
           <ListItem

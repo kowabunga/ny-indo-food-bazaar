@@ -11,7 +11,7 @@ export default function ListItem({
         <li
           className={`${
             !mobileMenu && 'hidden'
-          } sm:block text-center rounded transition duration-200 ease-in ${
+          } my-1 sm:my-0 sm:block text-center rounded transition duration-200 ease-in ${
             activePage === href ? 'shadow-inner bg-green-200' : 'text-gray-600'
           } hover:bg-green-100 p-5 sm:p-2`}
         >
