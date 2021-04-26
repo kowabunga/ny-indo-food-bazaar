@@ -1,5 +1,6 @@
 import mongoose from 'mongoose';
 import bcrypt from 'bcryptjs';
+import { v4 as uuidv4 } from 'uuid';
 
 const vendorSchema = new mongoose.Schema({
   name: {
@@ -23,6 +24,10 @@ const vendorSchema = new mongoose.Schema({
     type: String,
     default: Date.now,
   },
+  uuid: {
+    type: String,
+    default: uuidv4,
+  },
   items: [
     {
       name: {
@@ -37,6 +42,13 @@ const vendorSchema = new mongoose.Schema({
         type: String,
         required: true,
       },
+    },
+  ],
+  //@TODO Continue working on adding testimonies
+  testimonies: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'Testimony',
     },
   ],
 });

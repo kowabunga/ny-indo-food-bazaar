@@ -12,9 +12,8 @@ const testimonySchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  vendor: {
-    type: Schema.Types.ObjectId,
-    ref: 'vendor',
+  uuid: {
+    type: String,
     default: null,
   },
 });
