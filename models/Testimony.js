@@ -1,6 +1,6 @@
-import { Schema, model } from 'mongoose';
+import mongoose from 'mongoose';
 
-const TestimonySchema = new Schema({
+const testimonySchema = new mongoose.Schema({
   name: {
     type: String,
   },
@@ -19,6 +19,5 @@ const TestimonySchema = new Schema({
   },
 });
 
-const Testimony = model('Testimony', TestimonySchema);
-
-export default Testimony;
+export default mongoose.models.Testimony ||
+  mongoose.model('Testimony', testimonySchema);

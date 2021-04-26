@@ -29,14 +29,10 @@ export default function Navbar() {
   }, [router]);
 
   return (
-    <nav className='px-2 py-3 w-full relative sm:grid sm:grid-cols-12 sm:items-center'>
+    <nav className='px-2 py-3 w-full relative sm:grid sm:grid-cols-12 sm:items-center bg-green-400'>
       <Link href='/' className='col-span-1'>
-        <a>
-          <FontAwesomeIcon
-            icon='utensils'
-            size='2x'
-            className='text-green-400'
-          />
+        <a className='ml-2'>
+          <FontAwesomeIcon icon='utensils' size='2x' className='text-white' />
         </a>
       </Link>
       <ul
@@ -54,7 +50,7 @@ export default function Navbar() {
       </ul>
       <button
         onClick={changeMobileMenu}
-        className={`cursor-pointer text-2xl sm:hidden ml-auto absolute ${styles.fixedButton}`}
+        className={`cursor-pointer text-2xl sm:hidden ml-auto absolute text-gray-50 ${styles.fixedButton}`}
       >
         <FontAwesomeIcon icon='bars' />
       </button>

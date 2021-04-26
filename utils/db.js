@@ -9,6 +9,7 @@ export default async function connectDb() {
       useFindAndModify: false,
     });
     console.log(`MongoDB Connected on ${connection.connection.host}`);
+    return connection;
   } catch (error) {
     console.error(error);
     process.exit(1);

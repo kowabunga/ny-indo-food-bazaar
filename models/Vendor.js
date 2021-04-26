@@ -1,7 +1,7 @@
-import { Schema, model } from 'mongoose';
+import mongoose from 'mongoose';
 import bcrypt from 'bcryptjs';
 
-const VendorSchema = new Schema({
+const vendorSchema = new mongoose.Schema({
   name: {
     type: String,
     required: true,
@@ -42,12 +42,12 @@ const VendorSchema = new Schema({
 });
 
 // Check hashed password and submitted password on login
-VendorSchema.methods.matchPassword = async function (password) {
+vendorSchema.methods.matchPassword = async function (password) {
   return await bcrypt.compare(password, this.password);
 };
 
 // Have mongodb run the password hash function on vendor save and/or if password has been modified
-VendorSchema.pre('save', async function (next) {
+vendorSchema.pre('save', async function (next) {
   if (!this.isModified('password')) {
     next();
   } else {
@@ -59,6 +59,4 @@ VendorSchema.pre('save', async function (next) {
   }
 });
 
-const Vendor = model('vendor', VendorSchema);
-
-export default Vendor;
+export default mongoose.models.Vendor || mongoose.model('Vendor', vendorSchema);
