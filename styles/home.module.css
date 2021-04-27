@@ -4,3 +4,7 @@
   background-repeat: no-repeat;
   background-size: cover;
 }
+
+.bigHeight {
+  height: 500px;
+}

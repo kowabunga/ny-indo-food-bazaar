@@ -12,10 +12,6 @@ const testimonySchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  uuid: {
-    type: String,
-    default: null,
-  },
 });
 
 export default mongoose.models.Testimony ||
