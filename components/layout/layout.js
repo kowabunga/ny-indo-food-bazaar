@@ -1,5 +1,5 @@
 import Navbar from '../navbar/navbar';
-import NextEventDate from '../nextEventDate';
+import NextEventDate from './nextEventDate';
 
 export default function Layout({ children }) {
   return (
