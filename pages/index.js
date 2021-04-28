@@ -3,6 +3,7 @@ export default function Home() {
   return (
     <>
       <Hero />
+      <h2>See what our </h2>
     </>
   );
 }
