@@ -21,6 +21,7 @@ export default async function handler(req, res) {
     return res.status(200).json(testimony);
   }
 
+  //@TODO - get rid of uuid and just work with mongodb id
   // Delete testimony (admin only)
   if (method === 'DELETE') {
     const testimony = await Testimony.findById({ _id: id });
