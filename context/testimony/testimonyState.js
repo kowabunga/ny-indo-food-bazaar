@@ -11,6 +11,10 @@ export default function TestimonyState({ children }) {
 
   const {} = initialState;
 
+  async function getAllTestimonies() {
+    const response = await fetch('/api/');
+  }
+
   return (
     <TestimonyContext.Provider value={{}}>{children}</TestimonyContext.Provider>
   );

@@ -2,7 +2,7 @@ import mongoose from 'mongoose';
 
 export default async function connectDb() {
   try {
-    const connection = await mongoose.connect(process.env.mongoDbURI, {
+    const connection = await mongoose.connect(process.env.MONGO_DB_URI, {
       useNewUrlParser: true,
       useCreateIndex: true,
       useUnifiedTopology: true,
@@ -12,6 +12,5 @@ export default async function connectDb() {
     return connection;
   } catch (error) {
     console.error(error);
-    process.exit(1);
   }
 }
