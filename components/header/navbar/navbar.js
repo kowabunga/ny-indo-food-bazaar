@@ -3,7 +3,7 @@ import { useRouter } from 'next/router';
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import ListItem from './listItem';
-import styles from '../../styles/navbar.module.css';
+import styles from '../../../styles/navbar.module.css';
 
 export default function Navbar() {
   // store pathname of current page. Used for determing active link styles for navbar
@@ -29,10 +29,16 @@ export default function Navbar() {
   }, [router]);
 
   return (
-    <nav className='px-2 py-3 w-full relative sm:grid sm:grid-cols-12 sm:items-center bg-green-400'>
+    <nav
+      className={`bg-white sm:bg-transparent px-2 pt-3 pb-2 w-full relative sm:grid sm:grid-cols-12 sm:items-center ${styles.navBorderBottom}`}
+    >
       <Link href='/' className='col-span-1'>
-        <a className='ml-2'>
-          <FontAwesomeIcon icon='utensils' size='2x' className='text-white' />
+        <a className='ml-2 '>
+          <FontAwesomeIcon
+            icon='utensils'
+            size='2x'
+            className='text-gray-700 sm:text-white'
+          />
         </a>
       </Link>
       <ul
@@ -52,7 +58,7 @@ export default function Navbar() {
         onClick={changeMobileMenu}
         className={`cursor-pointer text-2xl sm:hidden ml-auto absolute text-gray-50 ${styles.fixedButton}`}
       >
-        <FontAwesomeIcon icon='bars' />
+        <FontAwesomeIcon icon='bars' className='text-gray-700 sm:text-white' />
       </button>
     </nav>
   );

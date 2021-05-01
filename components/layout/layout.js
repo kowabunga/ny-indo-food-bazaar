@@ -1,4 +1,4 @@
-import Navbar from '../navbar/navbar';
+import Header from '../header/header';
 import NextEventDate from './nextEventDate';
 import TestimonyState from '../../context/testimony/testimonyState';
 import VendorState from '../../context/vendor/vendorState';
@@ -8,9 +8,7 @@ export default function Layout({ children }) {
     <>
       <TestimonyState>
         <VendorState>
-          <header className='shadow-md'>
-            <Navbar />
-          </header>
+          <Header />
           <NextEventDate />
           <main className='container mx-auto'>{children}</main>
           <footer className='bg-green-100'>footer</footer>
