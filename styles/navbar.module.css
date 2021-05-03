@@ -2,19 +2,27 @@
   top: 0.8125rem;
   right: 1.5rem;
 }
+
 .navLi {
-}
-
-.navLi:hover,
-.liBorderBottom {
   border-right: none;
   border-left: none;
-  border-bottom: 3px solid #34d399;
-  border-radius: 3px;
+  border-bottom: 3px solid transparent;
+  border-radius: 0px;
 }
 
-.navBorderBottom {
-  border-right: none;
-  border-left: none;
-  border-bottom: 1px solid #fff;
+@media screen and (min-width: 640px) {
+  .navLi:hover,
+  .liBorderBottom {
+    border-right: none;
+    border-left: none;
+    border-bottom: 3px solid #34d399;
+  }
+}
+
+@media screen and (max-width: 639px) {
+  .navLi > a {
+    display: block;
+    width: 95%;
+    margin: auto;
+  }
 }

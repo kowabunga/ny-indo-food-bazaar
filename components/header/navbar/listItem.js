@@ -6,22 +6,19 @@ export default function ListItem({
   mobileMenu,
   linkInfo: { href, title },
 }) {
-  //@TODO work on hover state not working
   return (
-    <Link href={href}>
-      <a>
-        <li
-          className={`${
-            !mobileMenu ? 'hidden' : ''
-          } my-1 sm:my-0 sm:block text-center text-black sm:text-white ${
-            activePage === href
-              ? `bg-green-300 text-white hover:bg-green-400 sm:hover:bg-transparent hover:text-white sm:bg-transparent  ${styles.liBorderBottom}`
-              : ''
-          } p-5 sm:p-2 navLi`}
-        >
-          {title}
-        </li>
-      </a>
-    </Link>
+    <li
+      className={`${
+        !mobileMenu ? 'hidden' : ''
+      } my-1 sm:my-0 sm:block text-center sm:text-white text-gray-800 p-5 sm:p-2 hover:bg-green-200 sm:hover:bg-transparent transition duration-200 ease-in ${
+        styles.navLi
+      } ${
+        activePage === href
+          ? `bg-green-300 text-white sm:bg-transparent  ${styles.liBorderBottom}`
+          : ''
+      }`}
+    >
+      <Link href={href}>{title}</Link>
+    </li>
   );
 }

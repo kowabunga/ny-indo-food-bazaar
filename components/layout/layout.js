@@ -9,7 +9,6 @@ export default function Layout({ children }) {
       <TestimonyState>
         <VendorState>
           <Header />
-          <NextEventDate />
           <main className='container mx-auto'>{children}</main>
           <footer className='bg-green-100'>footer</footer>
         </VendorState>
