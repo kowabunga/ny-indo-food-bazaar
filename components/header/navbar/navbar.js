@@ -58,7 +58,10 @@ export default function Navbar() {
         onClick={changeMobileMenu}
         className={`cursor-pointer text-2xl sm:hidden ml-auto absolute text-gray-50 ${styles.fixedButton}`}
       >
-        <FontAwesomeIcon icon='bars' className='text-gray-700 sm:text-white' />
+        <FontAwesomeIcon
+          icon='bars'
+          className='text-gray-700 sm:text-white hover:text-green-400 transition duration-200 ease-in'
+        />
       </button>
     </nav>
   );
