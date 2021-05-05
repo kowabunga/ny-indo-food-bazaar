@@ -6,8 +6,8 @@ export default function Header() {
   return (
     <header className={`w-full ${styles.headerHeight}`}>
       <Navbar />
-      <Hero />
       <NextEvent />
+      <Hero />
     </header>
   );
 }

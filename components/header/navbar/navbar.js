@@ -30,7 +30,7 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`bg-white sm:bg-transparent px-2 pt-3 pb-2 w-full relative sm:grid sm:grid-cols-12 sm:items-center ${styles.navBorderBottom}`}
+      className={`bg-white sm:bg-transparent px-2 pt-3 pb-2 w-full relative sm:grid sm:grid-cols-12 sm:items-center ${styles.navBorderBottom} relative`}
     >
       <Link href='/' className='col-span-1'>
         <a className='ml-2 '>
@@ -42,7 +42,7 @@ export default function Navbar() {
         </a>
       </Link>
       <ul
-        className={`flex flex-col mt-1 sm:mt-0 sm:flex-row sm:items-center sm:justify-around sm:col-start-4 md:col-start-6 col-end-13`}
+        className={`flex flex-col mt-1 sm:mt-0 sm:flex-row sm:items-center sm:justify-around sm:col-start-4 md:col-start-6 col-end-13 absolute bg-white left-0 sm:bg-transparent w-full sm:static`}
       >
         {/* Navbar Menu Items */}
         {links.map(link => (
