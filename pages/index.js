@@ -29,7 +29,7 @@ export default function Home({ testimonies }) {
           <Link href='/offerings'>
             <button
               type='button'
-              className='bg-white border border-white text-green-500 hover:border-green-900 hover:text-green-700 w-3/5 transition duration-200 ease-out  rounded p-2 mx-auto col-start-2 col-end-3 block capitalize'
+              className='bg-white border border-white text-green-500 hover:border-green-900 hover:text-green-700 w-3/5 transition duration-200 ease-out rounded p-2 mx-auto col-start-2 col-end-3 block capitalize'
             >
               take a look
             </button>
@@ -47,13 +47,17 @@ export default function Home({ testimonies }) {
       </section>
 
       {/* Will only show if we have reviews */}
-      {testimonies.length > 0 && (
-        <section className='p-20'>
-          <h2 className='text-3xl text-center capitalize'>
-            See what some of our customers have to say about us!
-          </h2>
-          <Testimonies testimonies={testimonies} />
-        </section>
+      {!testimonies ? (
+        <p>Loading...</p>
+      ) : (
+        testimonies.length > 0 && (
+          <section className='p-20'>
+            <h2 className='text-3xl text-center capitalize'>
+              See what some of our customers have to say about us!
+            </h2>
+            <Testimonies testimonies={testimonies} />
+          </section>
+        )
       )}
     </>
   );
