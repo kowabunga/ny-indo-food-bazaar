@@ -1,4 +1,5 @@
 import Header from '../header/header';
+import Footer from '../footer/footer';
 import TestimonyState from '../../context/testimony/testimonyState';
 import VendorState from '../../context/vendor/vendorState';
 
@@ -9,7 +10,7 @@ export default function Layout({ children }) {
         <VendorState>
           <Header />
           <main className='mx-auto'>{children}</main>
-          <footer className='bg-green-100'>footer</footer>
+          <Footer />
         </VendorState>
       </TestimonyState>
     </>
