@@ -1,6 +1,6 @@
 import Testimony from '../models/Testimony';
 import connectDb from '../utils/db';
-
+import Spinner from '../components/Spinner';
 import Link from 'next/link';
 import Image from 'next/image';
 import Testimonies from '../components/testimonies/testimonies';
@@ -47,8 +47,9 @@ export default function Home({ testimonies }) {
       </section>
 
       {/* Will only show if we have reviews */}
+
       {!testimonies ? (
-        <p>Loading...</p>
+        <Spinner />
       ) : (
         testimonies.length > 0 && (
           <section className='p-20'>
@@ -71,12 +72,10 @@ export async function getStaticProps() {
     connection.disconnect();
     return {
       props: {
-        error: 'No testimonies found',
+        testimonies: null,
       },
     };
   }
-
-  console.log(testimonies);
 
   connection.disconnect();
 

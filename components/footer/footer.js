@@ -1,7 +1,15 @@
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import Link from 'next/link';
+
 export default function Footer() {
   return (
     <footer className='flex flex-col sm:flex-row items-center justify-evenly bg-green-500 h-52 text-white'>
-      <h2 className='text-2xl'>New York Indonesian Food Bazaar</h2>
+      <div>
+        <h2 className='text-2xl'>New York Indonesian Food Bazaar</h2>
+        <Link href='/vendors/login'>
+          <a className='hover:underline text-white'>Vendor Login</a>
+        </Link>
+      </div>
       <address>
         123 5th St <br></br> New York City, 11106 <br></br> (555) 555-5555
       </address>

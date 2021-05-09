@@ -1,13 +1,13 @@
 import Testimony from '../../models/Testimony';
 import connectDb from '../../utils/db';
 import Testimonies from '../../components/testimonies/testimonies';
+import Spinner from '../../components/Spinner';
 
 export default function Testimonials({ testimonies }) {
-  console.log(testimonies);
   return (
-    <section className='container'>
+    <section className='container mx-auto'>
       {!testimonies ? (
-        <p>Loading...</p>
+        <Spinner />
       ) : (
         testimonies.length > 0 && <Testimonies testimonies={testimonies} />
       )}
@@ -23,16 +23,13 @@ export async function getStaticProps() {
     connection.disconnect();
     return {
       props: {
-        error: 'No testimonies found',
+        testimonies: null,
       },
     };
   }
 
-  console.log(testimonies);
-
   connection.disconnect();
 
-  //! Fix till I figure out what object is breaking default Nextjs serialization :)
   testimonies = JSON.parse(JSON.stringify(testimonies));
 
   return {

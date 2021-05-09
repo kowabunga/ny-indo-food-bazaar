@@ -1,7 +1,10 @@
-.headerHeight {
-  height: 550px;
+.header {
   background-image: url('../public/images/baiq-daling-ykThMylLsbY-unsplash.jpg');
   background-position: center;
   background-repeat: none;
   background-size: cover;
+}
+
+.headerHeight {
+  height: 550px;
 }

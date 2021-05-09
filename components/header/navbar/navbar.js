@@ -25,7 +25,7 @@ export default function Navbar() {
   };
 
   useEffect(() => {
-    setActivePage(router.pathname);
+    setActivePage(router.pathname.split('/')[1]);
   }, [router]);
 
   return (
