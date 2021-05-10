@@ -1,5 +1,5 @@
-import React from 'react';
+import Vendor from '../../models/Vendor';
 
-export default function Vendors() {
+export default function VendorPage() {
   return <div></div>;
 }

@@ -39,7 +39,6 @@ const vendorSchema = new mongoose.Schema({
       },
     },
   ],
-  //@TODO Continue working on adding testimonies
   testimonies: [
     {
       type: mongoose.Schema.Types.ObjectId,

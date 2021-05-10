@@ -6,7 +6,7 @@ import UserTestimony from '../../components/testimonies/testimony';
 import Alert from '../../components/Alert';
 import PropTypes from 'prop-types';
 
-export default function TestimonyDetails({ testimony }) {
+export default function TestimonyDetailsPage({ testimony }) {
   const router = useRouter();
 
   if (router.isFallback) {

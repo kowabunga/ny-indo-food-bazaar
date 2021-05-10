@@ -3,7 +3,7 @@ import connectDb from '../../utils/db';
 import Testimonies from '../../components/testimonies/testimonies';
 import Spinner from '../../components/Spinner';
 
-export default function Testimonials({ testimonies }) {
+export default function TestimonialsPage({ testimonies }) {
   return (
     <section className='container mx-auto'>
       {!testimonies ? (

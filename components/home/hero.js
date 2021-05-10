@@ -1,9 +1,7 @@
 import { useRouter } from 'next/router';
 export default function Hero() {
   const router = useRouter();
-  console.log(router);
   const pathRoute = router.pathname.split('/')[1];
-  console.log(pathRoute);
 
   return (
     <section className={`w-full my-3 grid grid-cols-6`}>
