@@ -1,5 +1,4 @@
 import Testimony from '../models/Testimony';
-import connectDb from '../utils/db';
 import Spinner from '../components/Spinner';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -65,19 +64,15 @@ export default function Home({ testimonies }) {
 }
 
 export async function getStaticProps() {
-  const connection = await connectDb();
   let testimonies = await Testimony.find({});
 
   if (!testimonies) {
-    connection.disconnect();
     return {
       props: {
         testimonies: null,
       },
     };
   }
-
-  connection.disconnect();
 
   //! Fix till I figure out what object is breaking default Nextjs serialization :)
   testimonies = JSON.parse(JSON.stringify(testimonies));

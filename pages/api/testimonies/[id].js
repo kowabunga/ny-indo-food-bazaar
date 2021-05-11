@@ -1,12 +1,12 @@
 import Testimony from '../../../models/Testimony';
-import connectDb from '../../../utils/db';
+// import connectDb from '../../../utils/db';
+import connectDb from '../../../middleware/connectDb';
 
-export default async function handler(req, res) {
+export default connectDb(async function handler(req, res) {
   const {
     method,
     query: { id },
   } = req;
-  const connection = await connectDb();
 
   try {
     // Get testimony by id
@@ -17,7 +17,6 @@ export default async function handler(req, res) {
         return res.status(404).json({ msg: 'Could not find testimony' });
       }
 
-      connection.disconnect();
       return res.status(200).json(testimony);
     }
 
@@ -35,8 +34,7 @@ export default async function handler(req, res) {
 
       console.log('here');
 
-      connection.disconnect();
-      return res.status(200).json({msg:'Testimony deleted'});
+      return res.status(200).json({ msg: 'Testimony deleted' });
     }
 
     res.status(405).json({ msg: `Request method "${method}" not allowed` });
@@ -45,5 +43,4 @@ export default async function handler(req, res) {
       .status(500)
       .json({ msg: 'Internal server error', error: error.message });
   }
-  connection.disconnect();
-}
+});
