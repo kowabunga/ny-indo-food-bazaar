@@ -15,6 +15,10 @@ const vendorSchema = new mongoose.Schema({
     type: String,
     minlength: 6,
   },
+  image: {
+    type: String,
+    default: null,
+  },
   passwordResetToken: {
     type: String,
     default: null,
@@ -23,22 +27,7 @@ const vendorSchema = new mongoose.Schema({
     type: String,
     default: Date.now,
   },
-  items: [
-    {
-      name: {
-        type: String,
-        required: true,
-      },
-      description: {
-        type: String,
-        required: true,
-      },
-      image: {
-        type: String,
-        required: true,
-      },
-    },
-  ],
+  offerings: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Offering' }],
   testimonies: [
     {
       type: mongoose.Schema.Types.ObjectId,

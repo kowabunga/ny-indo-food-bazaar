@@ -1,5 +1,5 @@
 import Testimony from '../../models/Testimony';
-import connectDb from '../../utils/db';
+import connectDb from '../../middleware/connectDb';
 import Spinner from '../../components/Spinner';
 import { useRouter } from 'next/router';
 import UserTestimony from '../../components/testimonies/testimony';
@@ -26,38 +26,33 @@ export default function TestimonyDetailsPage({ testimony }) {
   );
 }
 
-TestimonyDetails.propTypes = {
+TestimonyDetailsPage.propTypes = {
   testimony: PropTypes.object.isRequired,
 };
 
 export async function getStaticProps(context) {
-  const connection = await connectDb();
+  const testimony = await connectDb(async function handler() {
+    const testimonialId = context.params.id;
 
-  const testimonialId = context.params.id;
+    const testimony = await Testimony.findById({ _id: testimonialId });
 
-  const testimony = await Testimony.findById({ _id: testimonialId });
-
-  connection.disconnect();
+    return JSON.parse(JSON.stringify(testimony));
+  })();
 
   return {
     props: {
-      testimony: JSON.parse(JSON.stringify(testimony)),
-      revalidate: 3600,
+      testimony,
+      revalidate: 10,
     },
   };
 }
 
 export async function getStaticPaths() {
-  const connection = await connectDb();
-  let testimonies;
+  const testimonies = await connectDb(async function handler() {
+    const testimonies = await Testimony.find({});
 
-  try {
-    testimonies = await Testimony.find({});
-  } catch (error) {
-    connection.disconnect();
-  }
-
-  connection.disconnect();
+    return JSON.parse(JSON.stringify(testimonies));
+  })();
 
   return {
     paths: testimonies.map(testimony => ({

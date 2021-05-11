@@ -1,5 +1,5 @@
 import Testimony from '../../models/Testimony';
-import connectDb from '../../utils/db';
+import connectDb from '../../middleware/connectDb';
 import Testimonies from '../../components/testimonies/testimonies';
 import Spinner from '../../components/Spinner';
 
@@ -16,11 +16,21 @@ export default function TestimonialsPage({ testimonies }) {
 }
 
 export async function getStaticProps() {
-  const connection = await connectDb();
-  let testimonies = await Testimony.find({});
+  const testimonies = await connectDb(async function handler() {
+    let testimonies = await Testimony.find({});
+
+    if (!testimonies) {
+      return {
+        props: {
+          testimonies: null,
+        },
+      };
+    }
+
+    return JSON.parse(JSON.stringify(testimonies));
+  })();
 
   if (!testimonies) {
-    connection.disconnect();
     return {
       props: {
         testimonies: null,
@@ -28,14 +38,10 @@ export async function getStaticProps() {
     };
   }
 
-  connection.disconnect();
-
-  testimonies = JSON.parse(JSON.stringify(testimonies));
-
   return {
     props: {
       testimonies,
     },
-    revalidate: 3600,
+    revalidate: 10,
   };
 }

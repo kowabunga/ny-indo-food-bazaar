@@ -1,19 +1,38 @@
 import Vendor from '../../models/Vendor';
-import connectDb from '../../utils/db';
+import connectDb from '../../middleware/connectDb';
+import VendorList from '../../components/vendors/vendorList';
 
 export default function VendorsPage({ vendors }) {
-  console.log(vendors);
-  return <div></div>;
+  return (
+    <section>
+      <VendorList vendors={vendors} />
+    </section>
+  );
 }
 
 export async function getStaticProps() {
-  const connection = await connectDb();
+  const vendors = await connectDb(async function handler() {
+    let vendors = await Vendor.find({}, 'name').populate('testimonies');
 
-  let vendors = await Vendor.find({});
+    if (!vendors) {
+      return null;
+    }
+
+    return JSON.parse(JSON.stringify(vendors));
+  })();
+
+  if (!vendors) {
+    return {
+      props: {
+        vendors: null,
+      },
+    };
+  }
 
   return {
     props: {
-      vendors: JSON.parse(JSON.stringify(vendors)),
+      vendors,
+      revalidate: 10,
     },
   };
 }
