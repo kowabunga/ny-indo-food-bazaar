@@ -5,7 +5,7 @@ export default function Footer() {
     <footer className='flex flex-col sm:flex-row items-center justify-evenly bg-green-500 h-52 text-white'>
       <div>
         <h2 className='text-2xl'>New York Indonesian Food Bazaar</h2>
-        <Link href='/vendors/login'>
+        <Link href='/auth/login'>
           <a className='hover:underline text-white'>Vendor Login</a>
         </Link>
       </div>

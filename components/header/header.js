@@ -7,7 +7,7 @@ import { useRouter } from 'next/router';
 export default function Header() {
   const router = useRouter();
   const path = router.pathname.split('/');
-  console.log(path[1]);
+  
   return (
     <header
       className={`w-full ${styles.header} ${

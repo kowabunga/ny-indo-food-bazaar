@@ -65,4 +65,6 @@ vendorSchema.pre('save', async function (next) {
   }
 });
 
+console.log(mongoose.models);
+
 export default mongoose.models.Vendor || mongoose.model('Vendor', vendorSchema);
