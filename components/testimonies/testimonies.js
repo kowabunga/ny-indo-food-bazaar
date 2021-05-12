@@ -1,4 +1,6 @@
 import Testimony from './testimony';
+import PropTypes from 'prop-types';
+
 export default function Testimonies({ testimonies }) {
   return (
     <div className='flex flex-wrap items-center justify-center my-8'>
@@ -8,3 +10,7 @@ export default function Testimonies({ testimonies }) {
     </div>
   );
 }
+
+Testimonies.propTypes = {
+  testimonies: PropTypes.array.isRequired,
+};

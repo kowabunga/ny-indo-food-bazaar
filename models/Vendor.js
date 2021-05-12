@@ -19,6 +19,10 @@ const vendorSchema = new mongoose.Schema({
     type: String,
     default: null,
   },
+  about: {
+    type: String,
+    required: true,
+  },
   passwordResetToken: {
     type: String,
     default: null,
@@ -27,13 +31,6 @@ const vendorSchema = new mongoose.Schema({
     type: String,
     default: Date.now,
   },
-  offerings: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Offering' }],
-  testimonies: [
-    {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: 'Testimony',
-    },
-  ],
 });
 
 // Check hashed password and submitted password on login

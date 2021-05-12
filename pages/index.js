@@ -27,12 +27,11 @@ export default function Home({ testimonies }) {
           Our vendors carefully craft their delicious food just for you! Why
           don't you take a look at what they are offering at our next event?
           <Link href='/offerings'>
-            <button
-              type='button'
-              className='bg-white border border-white text-green-500 hover:border-green-900 hover:text-green-700 w-3/5 transition duration-200 ease-out rounded p-2 mx-auto col-start-2 col-end-3 block capitalize'
+            <a
+              className='bg-purple-500 text-white hover:bg-purple-700 w-3/5 transition duration-200 ease-out rounded p-2 mx-auto col-start-2 col-end-3 block capitalize'
             >
               take a look
-            </button>
+            </a>
           </Link>
         </p>
         <div className='md:col-start-2 md:col-end-3 row-span-2 md:col-span- md:col-+w-auto h-96 relative'>

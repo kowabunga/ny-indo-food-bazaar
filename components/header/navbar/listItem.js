@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import styles from '../../../styles/navbar.module.css';
+import PropTypes from 'prop-types';
 
 export default function ListItem({
   activePage,
@@ -22,3 +23,9 @@ export default function ListItem({
     </li>
   );
 }
+
+ListItem.propTypes = {
+  activePage: PropTypes.string.isRequired,
+  mobileMenu: PropTypes.bool.isRequired,
+  linkInfo: PropTypes.object.isRequired,
+};

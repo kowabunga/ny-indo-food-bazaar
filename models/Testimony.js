@@ -14,7 +14,7 @@ const testimonySchema = new mongoose.Schema({
   },
   vendor: {
     type: mongoose.Schema.Types.ObjectId,
-    default: null,
+    required: true,
   },
 });
 

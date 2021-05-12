@@ -6,9 +6,10 @@ import {
   faUtensils,
   faBars,
   faSpinner,
+  faArrowRight,
 } from '@fortawesome/free-solid-svg-icons';
 
-library.add(faUtensils, faBars, faSpinner);
+library.add(faUtensils, faBars, faSpinner, faArrowRight);
 
 function MyApp({ Component, pageProps }) {
   return (

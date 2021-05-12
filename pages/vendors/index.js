@@ -1,8 +1,12 @@
 import Vendor from '../../models/Vendor';
 import connectDb from '../../middleware/connectDb';
 import VendorList from '../../components/vendors/vendorList';
+import Spinner from '../../components/Spinner';
 
 export default function VendorsPage({ vendors }) {
+  if (!vendors) {
+    return <Spinner />;
+  }
   return (
     <section>
       <VendorList vendors={vendors} />
@@ -12,7 +16,9 @@ export default function VendorsPage({ vendors }) {
 
 export async function getStaticProps() {
   const vendors = await connectDb(async function handler() {
-    let vendors = await Vendor.find({}, 'name').populate('testimonies');
+    let vendors = await Vendor.find({}, 'name about image').populate(
+      'testimonies'
+    );
 
     if (!vendors) {
       return null;

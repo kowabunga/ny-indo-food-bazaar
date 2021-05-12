@@ -25,11 +25,10 @@ export default connectDb(async function handler(req, res) {
     // Create testimony
     if (method === 'POST') {
       testimony.vendor = vendorId;
-
       const createdTestimony = await Testimony.create(testimony);
 
-      // Check if vendor id is added in request body.
-      // If present, add newly created testimony to vendor document
+      // // Check if vendor id is added in request body.
+      // // If present, add newly created testimony to vendor document
       if (vendorId) {
         await Vendor.updateOne(
           { _id: vendorId },
