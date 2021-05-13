@@ -12,9 +12,6 @@ export default function VendorDetailsPage({ vendorData }) {
   }
 
   const { vendor, testimonies, offerings } = vendorData;
-  console.log(vendor, testimonies, offerings);
-
-  console.log(vendor);
 
   return (
     <>
@@ -24,8 +21,24 @@ export default function VendorDetailsPage({ vendorData }) {
       </section>
 
       <section className='p-10'>
-        <h3 className='text-xl capitalize'>Our menu</h3>
+        <h3 className='text-xl capitalize text-green-500'>Our menu</h3>
         <Offerings offerings={offerings} />
+      </section>
+
+      <section className='p-10'>
+        <h3 className='text-xl capitalize text-green-500'>
+          See what our customers have to say about us!
+        </h3>
+        <div className='flex flex-wrap items-center justify-center m-5'>
+          {testimonies.length > 0 &&
+            testimonies.map(testimony => (
+              <TestimonyCard
+                testimony={testimony}
+                isDetailsPage={true}
+                key={testimony._id}
+              />
+            ))}
+        </div>
       </section>
     </>
   );
