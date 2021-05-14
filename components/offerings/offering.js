@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 
 export default function Offering({ offering }) {
   return (
-    <div className='flex flex-col justify-center sm:grid sm:grid-cols-5 border rounded p-2 m-5'>
+    <div className='flex flex-col justify-center sm:grid sm:grid-cols-5 border rounded p-2 m-5 lg:w-4/5'>
       <div className='sm:col-start-1 sm:col-end-3'>
         <img src={offering.image} />
       </div>

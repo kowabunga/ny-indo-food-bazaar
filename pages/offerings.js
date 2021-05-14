@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 export default function Offerings({ offerings }) {
   console.log(offerings);
   return (
-    <section className='lg:w-3/5 mx-auto'>
+    <section className='p-5 sm:p-10 mx-auto flex flex-wrap justify-center'>
       <OfferingList offerings={offerings} />
     </section>
   );
