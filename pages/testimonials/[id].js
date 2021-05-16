@@ -6,9 +6,16 @@ import UserTestimony from '../../components/testimonies/testimony';
 import Alert from '../../components/Alert';
 import PropTypes from 'prop-types';
 import Link from 'next/link';
+import { useEffect, useState } from 'react';
 
 export default function TestimonyDetailsPage({ testimony }) {
   const router = useRouter();
+  const [newTestimony, setNewTestimony] = useState(false);
+
+  useEffect(() => {
+    const path = router.asPath.includes('new=true');
+    if (path) setNewTestimony(true);
+  }, []);
 
   if (router.isFallback) {
     return <Spinner />;
@@ -16,28 +23,32 @@ export default function TestimonyDetailsPage({ testimony }) {
 
   return !testimony ? (
     <Alert
-      alert={
-        'Testimony not found, please return to the previous page and try again.'
-      }
+      alert='Testimony not found, please return to the previous page and try again.'
+      color='red'
     />
   ) : (
     <>
+      {newTestimony && <Alert alert='Testimony created!' color='green' />}
       <section className='flex justify-center'>
         <UserTestimony testimony={testimony} isDetailsPage={true} />
       </section>
       <section className='p-20 flex flex-col justify-center '>
-        <h3 className='text-2xl capitalize text-center'>
-          Want to add your own testimony?
-        </h3>
-        <p className='py-2'>
-          Feel free to share what you experienced at your most recent visit to
-          the New York Indonesian Food Bazaar!
-        </p>
-        <Link href='/testimonials/create'>
-          <a className='border border-purple-500 w-1/5 mx-auto text-center rounded p-2 bg-white transition duration-200 hover:bg-purple-500 hover:text-white'>
-            Add Testimony
-          </a>
-        </Link>
+        {!newTestimony && (
+          <>
+            <h3 className='text-2xl capitalize text-center'>
+              Want to add your own testimony?
+            </h3>
+            <p className='py-2 text-center'>
+              Feel free to share what you experienced at your most recent visit
+              to the New York Indonesian Food Bazaar!
+            </p>
+            <Link href='/testimonials/create'>
+              <a className='border border-purple-500 w-1/5 mx-auto text-center rounded p-2 bg-white transition duration-200 hover:bg-purple-500 hover:text-white'>
+                Add Testimony
+              </a>
+            </Link>
+          </>
+        )}
       </section>
     </>
   );

@@ -14,7 +14,7 @@ export default function Testimonies({ testimonies }) {
         <h3 className='text-2xl capitalize text-center'>
           Want to add your own testimony?
         </h3>
-        <p className='py-2'>
+        <p className='py-2 text-center'>
           Feel free to share what you experienced at your most recent visit to
           the New York Indonesian Food Bazaar!
         </p>
