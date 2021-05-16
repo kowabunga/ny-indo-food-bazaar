@@ -5,11 +5,8 @@ import mongoose from 'mongoose';
 export default function handler(apiLogic) {
   return async function (req, res) {
     if (mongoose.connection.readyState) {
-      console.log('Connection already exists...');
       return apiLogic(req, res);
     }
-
-    console.log('Creating new connection...');
 
     await mongoose.connect(process.env.MONGO_DB_URI, {
       useNewUrlParser: true,

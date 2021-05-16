@@ -11,7 +11,7 @@ export default function ListItem({
     <li
       className={`${
         !mobileMenu ? 'hidden' : ''
-      } my-1 sm:my-0 sm:block text-center sm:text-white text-gray-800 p-5 sm:p-2 hover:bg-green-200 sm:hover:bg-transparent transition duration-200 ease-in ${
+      } my-1 sm:my-0 sm:block text-center sm:text-white text-gray-800 hover:bg-green-200 sm:hover:bg-transparent transition duration-200 ease-in ${
         styles.navLi
       } ${
         `/${activePage}` === href
@@ -19,7 +19,9 @@ export default function ListItem({
           : ''
       }`}
     >
-      <Link href={href}>{title}</Link>
+      <Link href={href}>
+        <a className='p-5 sm:p-2'>{title}</a>
+      </Link>
     </li>
   );
 }

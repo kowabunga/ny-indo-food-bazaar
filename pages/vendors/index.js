@@ -16,9 +16,7 @@ export default function VendorsPage({ vendors }) {
 
 export async function getStaticProps() {
   const vendors = await connectDb(async function handler() {
-    let vendors = await Vendor.find({}, 'name about image').populate(
-      'testimonies'
-    );
+    let vendors = await Vendor.find({}, 'name about image');
 
     if (!vendors) {
       return null;
