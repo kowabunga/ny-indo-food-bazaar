@@ -76,7 +76,7 @@ export default function AddTestimonyForm({ submitForm, vendorNames }) {
       <button
         type='submit'
         onClick={e => handleSubmit(e, { name, comment, vendor })}
-        className='w-2/5 border rounded border-purple-500 p-2 mx-auto transition duration-200 ease-in hover:bg-purple-500 hover:text-white'
+        className='sm:w-2/5 border rounded border-purple-500 p-2 mx-auto transition duration-200 ease-in hover:bg-purple-500 hover:text-white'
       >
         Create Testimony
       </button>

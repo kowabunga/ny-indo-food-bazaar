@@ -5,6 +5,7 @@ import Testimony from '../../models/Testimony';
 import Offering from '../../models/Offering';
 import TestimonyCard from '../../components/testimonies/testimony';
 import Offerings from '../../components/offerings/offerings';
+import Link from 'next/link';
 
 export default function VendorDetailsPage({ vendorData }) {
   if (!vendorData) {
@@ -39,6 +40,23 @@ export default function VendorDetailsPage({ vendorData }) {
               />
             ))}
         </div>
+      </section>
+      <section className='p-5 sm:p-20 flex flex-col justify-center '>
+        {
+          <>
+            <h3 className='text-2xl capitalize text-center'>
+              Have something to share about us?
+            </h3>
+            <p className='py-2 text-center'>
+              Feel free to let us know what you think!
+            </p>
+            <Link href='/testimonials/create'>
+              <a className='border border-purple-500 sm:w-1/5 mx-auto text-center rounded p-2 bg-white transition duration-200 hover:bg-purple-500 hover:text-white'>
+                Add Testimony
+              </a>
+            </Link>
+          </>
+        }
       </section>
     </>
   );

@@ -8,13 +8,13 @@ import connectDb from '../middleware/connectDb';
 export default function Home({ testimonies }) {
   return (
     <>
-      <section className='p-20'>
-        <h2 className='text-3xl m-3 tracking-wide text-center capitalize'>
+      <section className='p-5 sm:p-20'>
+        <h2 className='text-2xl sm:text-3xl m-3 tracking-wide text-center capitalize'>
           We serve the best of Indonesian food, crafted from recipes passed down
           through generations of family.
         </h2>
 
-        <p className='text-xl text-gray-600 mb-5'>
+        <p className='sm: text-xl text-gray-600 mb-5'>
           Lorem ipsum dolor sit, amet consectetur adipisicing elit. Pariatur
           error odit et, nostrum non totam sit ab, voluptate earum quam maiores
           dolor ducimus neque, fugit voluptatum dolore praesentium aliquid
@@ -27,9 +27,7 @@ export default function Home({ testimonies }) {
           Our vendors carefully craft their delicious food just for you! Why
           don't you take a look at what they are offering at our next event?
           <Link href='/offerings'>
-            <a
-              className='bg-purple-500 text-white hover:bg-purple-700 w-3/5 transition duration-200 ease-out rounded p-2 mx-auto col-start-2 col-end-3 block capitalize'
-            >
+            <a className='bg-purple-500 text-white hover:bg-purple-700 w-3/5 transition duration-200 ease-out rounded p-2 mx-auto col-start-2 col-end-3 block capitalize'>
               take a look
             </a>
           </Link>
