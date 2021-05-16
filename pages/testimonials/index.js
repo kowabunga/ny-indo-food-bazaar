@@ -9,7 +9,9 @@ export default function TestimonialsPage({ testimonies }) {
       {!testimonies ? (
         <Spinner />
       ) : (
-        testimonies.length > 0 && <Testimonies testimonies={testimonies} />
+        <div className='px-5'>
+          {testimonies.length > 0 && <Testimonies testimonies={testimonies} />}
+        </div>
       )}
     </section>
   );
