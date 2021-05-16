@@ -4,8 +4,8 @@ import PropTypes from 'prop-types';
 export default function Testimony({ testimony, isDetailsPage }) {
   return (
     <div
-      className={`relative border shadow-sm m-2 rounded w-80 sm:w-96 ${
-        isDetailsPage ? ' p-5 sm:p-20 sm:w-4/5' : 'p-5 '
+      className={`relative border shadow-sm m-2 rounded w-full sm:w-96 ${
+        isDetailsPage ? 'p-5 sm:p-20 sm:w-4/5' : 'p-5'
       } bg-white`}
     >
       <p className={`italic ${!isDetailsPage ? 'truncate' : 'sm:text-2xl'}`}>

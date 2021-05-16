@@ -49,7 +49,7 @@ export default function Home({ testimonies }) {
         <Spinner />
       ) : (
         testimonies.length > 0 && (
-          <section className='p-20'>
+          <section className='p-5 sm:p-20'>
             <h2 className='text-3xl text-center capitalize'>
               See what some of our customers have to say about us!
             </h2>

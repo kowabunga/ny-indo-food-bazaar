@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 export default function Testimonies({ testimonies }) {
   return (
     <>
-      <div className='flex flex-wrap items-center justify-center my-8'>
+      <div className='flex flex-wrap items-center justify-center my-8 w-full'>
         {testimonies.map(testimony => (
           <Testimony testimony={testimony} key={testimony._id} />
         ))}
