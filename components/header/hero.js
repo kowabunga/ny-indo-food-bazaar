@@ -6,7 +6,7 @@ export default function Hero() {
   return (
     <section className={`w-full my-3 grid grid-cols-6`}>
       <div className='col-start-1 col-end-7 md:col-start-2 md:col-end-6 p-3 mt-5 md:text-center'>
-        <h1 className='text-4xl md:text-6xl lg:text-6xl xl:text-7xl text-white tracking-wide capitalize'>
+        <h2 className='text-4xl md:text-6xl lg:text-6xl xl:text-7xl text-white tracking-wide capitalize'>
           {pathRoute === ''
             ? 'new york indonesian food bazaar'
             : pathRoute === 'testimonials'
@@ -16,7 +16,7 @@ export default function Hero() {
             : pathRoute === 'vendors'
             ? 'meet our vendors'
             : ''}
-        </h1>
+        </h2>
         <p className='text-gray-200 lg:text-xl xl:text-2xl mt-2'>
           {pathRoute === ''
             ? `Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus
