@@ -24,11 +24,11 @@ export default function TestimonyDetailsPage({ testimony }) {
   return !testimony ? (
     <Alert
       alert='Testimony not found, please return to the previous page and try again.'
-      color='red'
+      type='error'
     />
   ) : (
     <>
-      {newTestimony && <Alert alert='Testimony created!' color='green' />}
+      {newTestimony && <Alert alert='Testimony created!' type='ok' />}
       <section className='flex justify-center'>
         <UserTestimony testimony={testimony} isDetailsPage={true} />
       </section>
