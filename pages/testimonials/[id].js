@@ -66,6 +66,12 @@ export async function getStaticProps(context) {
 
     const testimony = await Testimony.findById({ _id: testimonialId });
 
+    if (!testimony) {
+      return {
+        notFound: true,
+      };
+    }
+
     return JSON.parse(JSON.stringify(testimony));
   })();
 
