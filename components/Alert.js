@@ -18,5 +18,5 @@ export default function Alert({ alert, type }) {
 
 Alert.propTypes = {
   alert: PropTypes.string.isRequired,
-  color: PropTypes.string.isRequired,
+  type: PropTypes.string.isRequired,
 };
