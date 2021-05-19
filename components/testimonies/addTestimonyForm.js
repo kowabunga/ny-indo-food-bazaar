@@ -26,6 +26,7 @@ export default function AddTestimonyForm({ submitForm, vendorNames }) {
     }
 
     submitForm(data);
+    // no
   }
 
   return (
