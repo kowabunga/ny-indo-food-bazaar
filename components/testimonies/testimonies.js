@@ -19,7 +19,7 @@ export default function Testimonies({ testimonies }) {
           the New York Indonesian Food Bazaar!
         </p>
         <Link href='/testimonials/create'>
-          <a className='border border-purple-500 sm:w-1/5 mx-auto text-center rounded p-2 bg-white transition duration-200 hover:bg-purple-500 hover:text-white'>
+          <a className='border border-purple-500 sm:w-2/5 lg:w-1/5 mx-auto text-center rounded p-2 bg-white transition duration-200 hover:bg-purple-500 hover:text-white'>
             Add Testimony
           </a>
         </Link>

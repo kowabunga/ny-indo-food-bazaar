@@ -4,10 +4,10 @@
 }
 
 .navLi {
+  padding-bottom: 3px;
   border-right: none;
   border-left: none;
   border-bottom: 3px solid transparent;
-  border-radius: 0px;
 }
 
 @media screen and (min-width: 640px) {

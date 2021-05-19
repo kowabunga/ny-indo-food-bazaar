@@ -1,10 +1,12 @@
 import { useState, useEffect } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import styles from '../../styles/addTestimonyForm.module.css';
 export default function AddTestimonyForm({ submitForm, vendorNames }) {
   const [name, setName] = useState('');
   const [comment, setComment] = useState('');
   const [vendor, setVendor] = useState('');
   const [hide, setHide] = useState(true);
+  const [creating, setCreating] = useState(false);
 
   useEffect(() => {
     if (!hide) {
@@ -15,13 +17,17 @@ export default function AddTestimonyForm({ submitForm, vendorNames }) {
   function handleSubmit(e, data) {
     e.preventDefault();
 
+    setCreating(true);
+
     if (comment.length === 0) {
       setHide(false);
+      setCreating(false);
       return;
     }
 
     submitForm(data);
   }
+
   return (
     <form
       onSubmit={handleSubmit}
@@ -73,13 +79,22 @@ export default function AddTestimonyForm({ submitForm, vendorNames }) {
           ))}
         </select>
       </div>
-      <button
-        type='submit'
-        onClick={e => handleSubmit(e, { name, comment, vendor })}
-        className='sm:w-2/5 border rounded border-purple-500 p-2 mx-auto transition duration-200 ease-in hover:bg-purple-500 hover:text-white'
-      >
-        Create Testimony
-      </button>
+      <div className='group sm:w-3/5 mx-auto flex justify-center'>
+        <button
+          type='submit'
+          onClick={e => handleSubmit(e, { name, comment, vendor })}
+          className='w-full border rounded border-purple-500 p-2 transition duration-200 ease-in group-hover:bg-purple-500 active:text-purple-700 group-hover:text-white flex items-center justify-evenly'
+        >
+          {creating && (
+            <FontAwesomeIcon
+              icon='spinner'
+              size='2x'
+              className={`text-purple-500 group-hover:text-white motion-safe:animate-spin`}
+            />
+          )}
+          {creating ? 'Creating Testimony...' : 'Create Testimony'}
+        </button>
+      </div>
     </form>
   );
 }
