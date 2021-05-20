@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import Spinner from '../../components/Spinner';
 import connectDb from '../../middleware/connectDb';
 import Vendor from '../../models/Vendor';
@@ -9,13 +10,27 @@ import Link from 'next/link';
 
 export default function VendorDetailsPage({ vendorData }) {
   if (!vendorData) {
-    return <Spinner />;
+    return (
+      <>
+        <Head>
+          <title>Vendor Information</title>
+        </Head>
+        <Spinner />
+      </>
+    );
   }
 
   const { vendor, testimonies, offerings } = vendorData;
 
   return (
     <>
+      <Head>
+        <title>{vendor[0].name} - Vendor Information</title>
+        <meta
+          name='description'
+          content={`Read about our vendor, ${vendor[0].name} and what they have to offer you!`}
+        />
+      </Head>
       <section className='p-10'>
         <h2 className='text-2xl text-green-500'>{vendor[0].name}</h2>
         <p className='text-xl text-gray-700 ml-5'>{vendor[0].about}</p>

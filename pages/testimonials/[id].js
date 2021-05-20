@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import Testimony from '../../models/Testimony';
 import connectDb from '../../middleware/connectDb';
 import Spinner from '../../components/Spinner';
@@ -22,12 +23,28 @@ export default function TestimonyDetailsPage({ testimony }) {
   }
 
   return !testimony ? (
-    <Alert
-      alert='Testimony not found, please return to the previous page and try again.'
-      error={true}
-    />
+    <>
+      <Head>
+        <title>Customer Testimony - New York Indonesian Food Bazaar</title>
+        <meta
+          name='description'
+          content='Read what some of our customers have to say about us, our vendors, and the food we serve!'
+        />
+      </Head>
+      <Alert
+        alert='Testimony not found, please return to the previous page and try again.'
+        error={true}
+      />
+    </>
   ) : (
     <>
+      <Head>
+        <title>Customer Testimony - New York Indonesian Food Bazaar</title>
+        <meta
+          name='description'
+          content='Read what some of our customers have to say about us, our vendors, and the food we serve!'
+        />
+      </Head>
       {newTestimony && <Alert alert='Testimony created!' newTestimony={true} />}
       <section className='flex justify-center'>
         <UserTestimony testimony={testimony} isDetailsPage={true} />

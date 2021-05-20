@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import Vendor from '../../models/Vendor';
 import connectDb from '../../middleware/connectDb';
 import VendorList from '../../components/vendors/vendorList';
@@ -5,12 +6,32 @@ import Spinner from '../../components/Spinner';
 
 export default function VendorsPage({ vendors }) {
   if (!vendors) {
-    return <Spinner />;
+    return (
+      <>
+        <Head>
+          <title>Our Vendors - New York Indonesian Food Bazaar</title>
+          <meta
+            name='description'
+            content='Meet our vendors and see what they have to offer you!'
+          />
+        </Head>
+        <Spinner />
+      </>
+    );
   }
   return (
-    <section>
-      <VendorList vendors={vendors} />
-    </section>
+    <>
+      <Head>
+        <title>Our Vendors - New York Indonesian Food Bazaar</title>
+        <meta
+          name='description'
+          content='Meet our vendors and see what they have to offer you!'
+        />
+      </Head>
+      <section>
+        <VendorList vendors={vendors} />
+      </section>
+    </>
   );
 }
 

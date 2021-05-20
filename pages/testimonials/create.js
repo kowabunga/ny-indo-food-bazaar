@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import AddTestimonyForm from '../../components/testimonies/addTestimonyForm';
 import connectDb from '../../middleware/connectDb';
 import Vendor from '../../models/Vendor';
@@ -32,12 +33,21 @@ export default function CreateTestimonial({ vendorNames }) {
   }
 
   return (
-    <section>
-      <AddTestimonyForm
-        submitForm={createTestimony}
-        vendorNames={vendorNames}
-      />
-    </section>
+    <>
+      <Head>
+        <title>Create Testimony - New York Indonesian Food Bazaar</title>
+        <meta
+          name='description'
+          content='Share your experience at the New York Indonesian Food Bazaar!'
+        />
+      </Head>
+      <section>
+        <AddTestimonyForm
+          submitForm={createTestimony}
+          vendorNames={vendorNames}
+        />
+      </section>
+    </>
   );
 }
 

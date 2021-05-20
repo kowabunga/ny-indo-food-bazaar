@@ -1,14 +1,23 @@
+import Head from 'next/head';
 import Offering from '../models/Offering';
 import OfferingList from '../components/offerings/offerings';
 import connectDb from '../middleware/connectDb';
 import PropTypes from 'prop-types';
 
 export default function Offerings({ offerings }) {
-  console.log(offerings);
   return (
-    <section className='p-5 sm:p-10 mx-auto flex flex-wrap justify-center'>
-      <OfferingList offerings={offerings} />
-    </section>
+    <>
+      <Head>
+        <title>Offerings - New York Indonesian Food Bazaar</title>
+        <meta
+          name='description'
+          content='See what different foods our vendors have to offer you to enjoy!'
+        />
+      </Head>
+      <section className='p-5 sm:p-10 mx-auto flex flex-wrap justify-center'>
+        <OfferingList offerings={offerings} />
+      </section>
+    </>
   );
 }
 
