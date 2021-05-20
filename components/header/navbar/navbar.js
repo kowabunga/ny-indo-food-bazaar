@@ -32,8 +32,8 @@ export default function Navbar() {
     <nav
       className={`bg-white sm:bg-transparent px-2 pt-3 pb-2 w-full relative sm:grid sm:grid-cols-12 sm:items-center ${styles.navBorderBottom} relative`}
     >
-      <Link href='/' className='col-span-1' aria-label='go to homepage'>
-        <a className='ml-2 '>
+      <Link href='/' className='col-span-1'>
+        <a className='ml-2' aria-label='go to homepage'>
           <FontAwesomeIcon
             icon='utensils'
             size='2x'
