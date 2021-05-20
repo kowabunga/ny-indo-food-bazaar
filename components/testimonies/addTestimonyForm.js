@@ -91,7 +91,7 @@ export default function AddTestimonyForm({ submitForm, vendorNames }) {
             <FontAwesomeIcon
               icon='spinner'
               size='2x'
-              className={`text-purple-500 group-hover:text-white motion-safe:animate-spin`}
+              className='text-purple-500 group-hover:text-white motion-safe:animate-spin'
             />
           )}
           {creating ? 'Creating Testimony...' : 'Create Testimony'}
