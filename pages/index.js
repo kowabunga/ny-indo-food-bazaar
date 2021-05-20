@@ -22,7 +22,7 @@ export default function Home({ testimonies }) {
         </p>
       </section>
 
-      <section className='py-20 text-xl grid grid-cols-1 grid-rows-2 md:grid-rows-1 md:grid-cols-2 gap-x-10 px-5 bg-green-500'>
+      <section className='py-20 text-xl grid grid-cols-1 grid-rows-2 md:grid-rows-1 md:grid-cols-2 gap-x-10 px-5 bg-green-400'>
         <p className='col-start-1 col-end-2 row-span-1 p-2 flex flex-col justify-around items-center text-center text-white text-2xl'>
           Our vendors carefully craft their delicious food just for you! Why
           don't you take a look at what they are offering at our next event?

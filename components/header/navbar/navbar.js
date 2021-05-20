@@ -32,7 +32,7 @@ export default function Navbar() {
     <nav
       className={`bg-white sm:bg-transparent px-2 pt-3 pb-2 w-full relative sm:grid sm:grid-cols-12 sm:items-center ${styles.navBorderBottom} relative`}
     >
-      <Link href='/' className='col-span-1'>
+      <Link href='/' className='col-span-1' aria-label='go to homepage'>
         <a className='ml-2 '>
           <FontAwesomeIcon
             icon='utensils'
@@ -57,6 +57,7 @@ export default function Navbar() {
       <button
         onClick={changeMobileMenu}
         className={`cursor-pointer text-2xl sm:hidden ml-auto absolute text-gray-50 ${styles.fixedButton}`}
+        aria-label='mobile menu button'
       >
         <FontAwesomeIcon
           icon='bars'
