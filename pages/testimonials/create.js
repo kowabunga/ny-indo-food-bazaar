@@ -6,8 +6,6 @@ import { useRouter } from 'next/router';
 export default function CreateTestimonial({ vendorNames }) {
   const router = useRouter();
   async function createTestimony({ name, comment, vendor }) {
-    //@TODO Redirect back to testimony page!
-    //@TODO Update api route to return object
     const testimony = {
       testimony: {
         name,
@@ -15,6 +13,7 @@ export default function CreateTestimonial({ vendorNames }) {
       },
       vendorId: vendor,
     };
+
     const res = await fetch('/api/testimonies', {
       method: 'POST',
       body: JSON.stringify(testimony),
@@ -24,8 +23,6 @@ export default function CreateTestimonial({ vendorNames }) {
     });
 
     const data = await res.json();
-
-    console.log(data);
 
     router.push(
       `/testimonials/${data.createdTestimony._id}`,
