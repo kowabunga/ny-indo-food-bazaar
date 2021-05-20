@@ -81,17 +81,16 @@ export default function AddTestimonyForm({ submitForm, vendorNames }) {
         </select>
       </div>
       {/* //@TODO fix group hover */}
-      <div className='group sm:w-3/5 mx-auto flex justify-center'>
+      <div className='group sm:w-3/5 mx-auto flex justify-center text-purple-500 hover:text-white'>
         <button
           type='submit'
           onClick={e => handleSubmit(e, { name, comment, vendor })}
-          className='w-full border rounded border-purple-500 p-2 transition duration-200 ease-in group-hover:bg-purple-500 active:text-purple-700 group-hover:text-white flex items-center justify-evenly'
+          className='w-full border rounded border-purple-500 p-2 transition duration-200 ease-in hover:bg-purple-500 active:text-purple-700  flex items-center justify-evenly'
         >
           {creating && (
             <FontAwesomeIcon
               icon='spinner'
-              size='2x'
-              className='text-purple-500 group-hover:text-white motion-safe:animate-spin'
+              className='inline motion-safe:animate-spin text-2xl'
             />
           )}
           {creating ? 'Creating Testimony...' : 'Create Testimony'}
