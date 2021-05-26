@@ -1,6 +1,7 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useRouter } from 'next/router';
 import { useState, useEffect } from 'react';
+import Image from 'next/image';
 import Link from 'next/link';
 import ListItem from './listItem';
 import styles from '../../../styles/navbar.module.css';
@@ -34,10 +35,11 @@ export default function Navbar() {
     >
       <Link href='/' className='col-span-1'>
         <a className='ml-2' aria-label='go to homepage'>
-          <FontAwesomeIcon
-            icon='utensils'
-            size='2x'
-            className='text-gray-700 sm:text-white'
+          <Image
+            src='/images/ny_indo_fbzar.png'
+            alt='new york indonesian food bazaar image'
+            width={50}
+            height={50}
           />
         </a>
       </Link>
