@@ -74,7 +74,7 @@ export default function AddTestimonyForm({ submitForm, vendorNames }) {
           value={vendor}
           className={`block border rounded border-red-500 transition duration-50 ease-in focus:ring-2 focus:ring-red-500 focus:outline-none p-1 ${styles.width}`}
         >
-          <option value='DEFAULT' hidden selected></option>
+          <option value='DEFAULT' selected></option>
           {vendorNames.map(vendor => (
             <option value={vendor._id} key={vendor._id}>
               {vendor.name}
