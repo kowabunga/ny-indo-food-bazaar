@@ -11,11 +11,13 @@ export default function ListItem({
     <li
       className={`${
         !mobileMenu ? 'hidden' : ''
-      } my-1 sm:my-0 sm:block text-center sm:text-white text-gray-800 hover:bg-green-200 sm:hover:bg-transparent transition duration-200 ease-in ${
+      } my-1 sm:mt-0 sm:block text-center sm:text-white text-gray-800 hover:bg-blue-400 sm:hover:bg-transparent transition duration-200 ease-in ${
         styles.navLi
-      } ${
+      } 
+      ${mobileMenu && styles.navLiPadding}
+      ${
         `/${activePage}` === href
-          ? `bg-green-300 text-white sm:bg-transparent  ${styles.liBorderBottom}`
+          ? `bg-blue-300 text-white sm:bg-transparent  ${styles.liBorderBottom}`
           : ''
       }`}
     >

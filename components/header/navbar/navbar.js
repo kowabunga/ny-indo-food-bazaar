@@ -31,7 +31,7 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`bg-white sm:bg-transparent px-2 pt-3 pb-2 w-full relative sm:grid sm:grid-cols-12 sm:items-center ${styles.navBorderBottom} relative`}
+      className={`bg-white sm:bg-transparent px-2 pt-3 pb-1 w-full relative sm:grid sm:grid-cols-12 sm:items-center ${styles.navBorderBottom} relative`}
     >
       <Link href='/' className='col-span-1'>
         <a className='ml-2' aria-label='go to homepage'>
@@ -40,6 +40,8 @@ export default function Navbar() {
             alt='new york indonesian food bazaar image'
             width={50}
             height={50}
+            // @TODO See if I can get the full logo image
+            className={styles.logo}
           />
         </a>
       </Link>
