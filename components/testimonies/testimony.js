@@ -20,7 +20,7 @@ export default function Testimony({ testimony, isDetailsPage }) {
       </cite>
       {!isDetailsPage && (
         <Link href={`/testimonials/${testimony._id}`}>
-          <a className='hover:underline text-purple-500'>Read more...</a>
+          <a className='hover:underline text-blue-600'>Read more...</a>
         </Link>
       )}
     </div>

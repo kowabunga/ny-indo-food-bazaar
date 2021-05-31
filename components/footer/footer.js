@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 export default function Footer() {
   return (
-    <footer className='flex flex-col sm:flex-row items-center justify-evenly bg-green-400 h-52 text-white'>
+    <footer className='flex flex-col sm:flex-row items-center justify-evenly bg-blue-400 h-52 text-white'>
       <div>
         <h2 className='text-2xl'>New York Indonesian Food Bazaar</h2>
         <Link href='/auth/login'>

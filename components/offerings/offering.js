@@ -7,7 +7,7 @@ export default function Offering({ offering }) {
         <img src={offering.image} />
       </div>
       <div className='sm:col-start-3 sm:col-end-6 p-3'>
-        <p className='text-xl text-purple-500 mb-2'>{offering.name}</p>
+        <p className='text-xl text-blue-500 mb-2'>{offering.name}</p>
         <p className='ml-2'>{offering.description}</p>
       </div>
     </div>

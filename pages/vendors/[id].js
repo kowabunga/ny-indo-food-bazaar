@@ -32,17 +32,17 @@ export default function VendorDetailsPage({ vendorData }) {
         />
       </Head>
       <section className='p-10'>
-        <h2 className='text-2xl text-green-500'>{vendor[0].name}</h2>
+        <h2 className='text-2xl text-orange-light'>{vendor[0].name}</h2>
         <p className='text-xl text-gray-700 ml-5'>{vendor[0].about}</p>
       </section>
 
       <section className='p-10'>
-        <h3 className='text-xl capitalize text-green-500'>Our menu</h3>
+        <h3 className='text-xl capitalize text-orange-light'>Our menu</h3>
         <Offerings offerings={offerings} />
       </section>
 
       <section className='p-10'>
-        <h3 className='text-xl capitalize text-green-500'>
+        <h3 className='text-xl capitalize text-orange-light'>
           See what our customers have to say about us!
         </h3>
         <div className='flex flex-wrap items-center justify-center m-5'>
@@ -66,7 +66,7 @@ export default function VendorDetailsPage({ vendorData }) {
               Feel free to let us know what you think!
             </p>
             <Link href='/testimonials/create'>
-              <a className='border border-purple-500 sm:w-1/5 mx-auto text-center rounded p-2 bg-white transition duration-200 hover:bg-purple-500 hover:text-white'>
+              <a className='border border-purple-500 sm:w-1/5 mx-auto text-center rounded p-2 bg-red-500 hover:bg-red-600 text-white transition duration-200'>
                 Add Testimony
               </a>
             </Link>

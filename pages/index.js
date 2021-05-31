@@ -22,12 +22,12 @@ export default function Home({ testimonies }) {
         </p>
       </section>
 
-      <section className='py-20 text-xl grid grid-cols-1 grid-rows-2 md:grid-rows-1 md:grid-cols-2 gap-x-10 px-5 bg-green-400'>
+      <section className='py-20 text-xl grid grid-cols-1 grid-rows-2 md:grid-rows-1 md:grid-cols-2 gap-x-10 px-5 bg-blue-400'>
         <p className='col-start-1 col-end-2 row-span-1 p-2 flex flex-col justify-around items-center text-center text-white text-2xl'>
           Our vendors carefully craft their delicious food just for you! Why
           don't you take a look at what they are offering at our next event?
           <Link href='/offerings'>
-            <a className='bg-purple-500 text-white hover:bg-purple-700 w-3/5 transition duration-200 ease-out rounded p-2 mx-auto col-start-2 col-end-3 block capitalize'>
+            <a className='bg-red-500 hover:bg-red-600 text-white w-3/5 transition duration-200 ease-out rounded p-2 mx-auto col-start-2 col-end-3 block capitalize'>
               take a look
             </a>
           </Link>
