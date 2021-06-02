@@ -79,7 +79,6 @@ export default function VendorDetailsPage({ vendorData }) {
 
 export async function getStaticProps(context) {
   const { id } = context.params;
-  console.log(id);
   const vendorData = await connectDb(async function handler() {
     let vendor = await Vendor.find({ _id: id });
     let testimonies = await Testimony.find({ vendor: id });
