@@ -36,7 +36,7 @@ export default function VendorsPage({ vendors }) {
 }
 
 export async function getStaticProps() {
-  // test
+  // nothing to see here...
   const vendors = await connectDb(async function handler() {
     let vendors = await Vendor.find({}, 'name about image');
 
